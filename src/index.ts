@@ -432,6 +432,44 @@ class TrelloServer {
       }
     );
 
+    // Attach link to card
+    this.server.registerTool(
+      'attach_link_to_card',
+      {
+        title: 'Attach Link to Card',
+        description: 'Attach a link/URL to a card on a specific board',
+        inputSchema: {
+          boardId: z
+            .string()
+            .optional()
+            .describe(
+              'ID of the Trello board where the card exists (uses default if not provided)'
+            ),
+          cardId: z.string().describe('ID of the card to attach the link to'),
+          url: z.string().url().describe('URL to attach to the card'),
+          name: z
+            .string()
+            .optional()
+            .describe('Optional name for the link attachment (defaults to the URL itself)'),
+        },
+      },
+      async ({ boardId, cardId, url, name }) => {
+        try {
+          const attachment = await this.trelloClient.attachLinkToCard(
+            boardId,
+            cardId,
+            url,
+            name
+          );
+          return {
+            content: [{ type: 'text' as const, text: JSON.stringify(attachment, null, 2) }],
+          };
+        } catch (error) {
+          return this.handleError(error);
+        }
+      }
+    );
+
     // Attach image data to card (for base64/data URL uploads)
     this.server.registerTool(
       'attach_image_data_to_card',

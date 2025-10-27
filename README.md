@@ -587,6 +587,22 @@ nbsp; arguments: {
 }
 ```
 
+### attach\_link\_to\_card
+
+Attach a link/URL to a card. This is useful for attaching web links, documentation, or any other URL references to a Trello card.
+
+```typescript
+{
+  name: 'attach_link_to_card',
+  arguments: {
+    boardId?: string,  // Optional: ID of the board (uses default if not provided)
+    cardId: string,    // ID of the card to attach the link to
+    url: string,       // URL to attach to the card
+    name?: string      // Optional: Name for the link attachment (defaults to the URL itself)
+  }
+}
+```
+
 ### Comment Management Tools
 
 #### add\_comment

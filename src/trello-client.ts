@@ -515,6 +515,21 @@ export class TrelloClient {
     });
   }
 
+  async attachLinkToCard(
+    boardId: string | undefined,
+    cardId: string,
+    url: string,
+    name?: string
+  ): Promise<TrelloAttachment> {
+    return this.handleRequest(async () => {
+      const response = await this.axiosInstance.post(`/cards/${cardId}/attachments`, {
+        url,
+        name: name || url,
+      });
+      return response.data;
+    });
+  }
+
   async getCard(
     cardId: string,
     includeMarkdown: boolean = false
