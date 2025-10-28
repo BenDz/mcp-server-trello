@@ -1,6 +1,5 @@
 {
-  "name": "@BenDz/mcp-server-trello",
-  "mcpName": "io.github.BenDz/mcp-server-trello",
+  "name": "@b___d/mcp-server-trello",
   "version": "1.7.0",
   "description": "An MCP server for Trello boards, powered by Bun for maximum performance.",
   "keywords": [
@@ -17,12 +16,33 @@
     "task-management",
     "kanban"
   ],
-  "author": "Jarad DeLorenzo",
-  "license": "MIT",
+  "homepage": "https://github.com/BenDz/mcp-server-trello#readme",
   "bugs": {
     "url": "https://github.com/BenDz/mcp-server-trello/issues"
   },
-  "homepage": "https://github.com/BenDz/mcp-server-trello#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenDz/mcp-server-trello.git"
+  },
+  "license": "MIT",
+  "author": "Jarad DeLorenzo",
+  "type": "module",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "bin": {
+    "mcp-server-trello": "build/index.js"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "build": "bunx tsc"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.4",
     "axios": "^1.6.2",
@@ -42,20 +62,11 @@
     "terser": "^5.24.0",
     "typescript": "^5.3.2"
   },
-  "files": [
-    "build/**/*"
-  ],
-  "bin": {
-    "mcp-server-trello": "./build/index.js"
-  },
-  "type": "module",
   "engines": {
     "bun": ">=1.0.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "build": "bunx tsc"
-  }
+  "mcpName": "io.github.BenDz/mcp-server-trello"
 }
