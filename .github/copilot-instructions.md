@@ -80,11 +80,13 @@ The build output goes to the `build/` directory.
 - **Arrow Functions**: Avoid parentheses for single parameters
 
 Run linting:
+
 ```bash
 npx eslint src --ext .ts
 ```
 
 Run formatting:
+
 ```bash
 npx prettier --write src
 ```
@@ -100,10 +102,12 @@ npx prettier --write src
 ### Environment Variables
 
 Required:
+
 - `TRELLO_API_KEY` - Get from https://trello.com/app-key
 - `TRELLO_TOKEN` - Generate using API key authorization flow
 
 Optional:
+
 - `TRELLO_BOARD_ID` - Default board (can be changed via `set_active_board` tool)
 - `TRELLO_WORKSPACE_ID` - Initial workspace (can be changed via `set_active_workspace` tool)
 
@@ -119,6 +123,7 @@ When adding a new MCP tool:
 6. **Consider rate limiting** - all API calls are automatically rate-limited
 
 Example tool structure:
+
 ```typescript
 this.server.registerTool(
   'tool_name',
@@ -154,22 +159,22 @@ this.server.registerTool(
 ### Common Patterns
 
 **Date Formats**:
+
 - `dueDate`: Full ISO 8601 with time (e.g., `2023-12-31T12:00:00Z`)
 - `start`: Date only in YYYY-MM-DD format (e.g., `2025-08-05`)
 
 **Board ID Resolution**:
+
 ```typescript
 // Most methods accept optional boardId, falling back to default
 const effectiveBoardId = boardId || this.config.boardId;
 if (!effectiveBoardId) {
-  throw new McpError(
-    ErrorCode.InvalidRequest,
-    'No board ID provided and no default board set'
-  );
+  throw new McpError(ErrorCode.InvalidRequest, 'No board ID provided and no default board set');
 }
 ```
 
 **Error Response Format**:
+
 ```typescript
 return {
   content: [
@@ -187,11 +192,13 @@ return {
 Currently, there is no automated test suite. Contributions to add testing infrastructure are welcome!
 
 For manual testing:
+
 1. Set up environment variables in `.env` (copy from `.env.template`)
 2. Build the project: `npx tsc`
 3. Run via MCP client or use the examples in the `examples/` directory
 
 For evaluations (requires OpenAI API key):
+
 ```bash
 OPENAI_API_KEY=your-key npx mcp-eval src/evals/evals.ts src/index.ts
 ```
@@ -214,6 +221,7 @@ docker compose up --build
 Please review `CONTRIBUTING.md` for detailed contribution guidelines.
 
 Key points:
+
 - Fork and create a branch from `main`
 - Add tests for new features (when test infrastructure exists)
 - Update documentation for API changes
@@ -259,10 +267,10 @@ npx eslint src --ext .ts
 npm publish
 
 # Run via npx (users)
-npx @delorenj/mcp-server-trello
+npx @BenDz/mcp-server-trello
 
 # Run via bunx (users, faster)
-bunx @delorenj/mcp-server-trello
+bunx @BenDz/mcp-server-trello
 ```
 
 ## Resources

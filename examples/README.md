@@ -5,7 +5,9 @@ This directory contains comprehensive examples demonstrating how to use the MCP 
 ## 📚 Available Examples
 
 ### 1. [Usage Examples](./usage-examples.md)
+
 Comprehensive guide with practical examples covering:
+
 - Initial setup and configuration
 - Board and workspace management
 - Card management workflows
@@ -17,7 +19,9 @@ Comprehensive guide with practical examples covering:
 - Real-world scenarios
 
 ### 2. [JavaScript Examples](./javascript-examples.js)
+
 Node.js/JavaScript implementation examples featuring:
+
 - Sprint Management System
 - Bug Tracking System
 - Release Management
@@ -25,7 +29,9 @@ Node.js/JavaScript implementation examples featuring:
 - Complete working classes ready to use
 
 ### 3. [Python Examples](./python-examples.py)
+
 Python implementation examples including:
+
 - Task Priority System
 - Kanban Board Automation
 - Retrospective Management
@@ -33,7 +39,9 @@ Python implementation examples including:
 - Type-safe implementations with dataclasses
 
 ### 4. [TypeScript Examples](./typescript-examples.ts)
+
 TypeScript examples with full type safety:
+
 - Agile Board Manager
 - Automation Rules Engine
 - Time Tracking System
@@ -45,11 +53,13 @@ TypeScript examples with full type safety:
 ### Prerequisites
 
 1. **Set up MCP Server Trello**:
+
    ```bash
-   npm install -g @delorenj/mcp-server-trello
+   npm install -g @BenDz/mcp-server-trello
    ```
 
 2. **Configure your environment**:
+
    ```bash
    export TRELLO_API_KEY="your-api-key"
    export TRELLO_TOKEN="your-token"
@@ -62,6 +72,7 @@ TypeScript examples with full type safety:
 ### Using the Examples
 
 #### JavaScript/Node.js
+
 ```javascript
 const { TrelloMCPClient, SprintManager } = require('./javascript-examples');
 
@@ -73,6 +84,7 @@ await sprintManager.initializeSprint(23, '2025-01-22', '2025-02-05');
 ```
 
 #### Python
+
 ```python
 from python_examples import TrelloMCPClient, TaskManager, Priority, Task
 
@@ -89,6 +101,7 @@ await task_manager.create_task(task)
 ```
 
 #### TypeScript
+
 ```typescript
 import { TrelloMCPClient, AgileBoard, UserStory } from './typescript-examples';
 
@@ -97,10 +110,10 @@ const board = new AgileBoard(client);
 
 // Create a user story
 const story: UserStory = {
-    title: 'New Feature',
-    description: 'Implement new feature',
-    acceptanceCriteria: ['AC1', 'AC2'],
-    priority: 'high'
+  title: 'New Feature',
+  description: 'Implement new feature',
+  acceptanceCriteria: ['AC1', 'AC2'],
+  priority: 'high',
 };
 await board.createUserStory(story);
 ```
@@ -108,6 +121,7 @@ await board.createUserStory(story);
 ## 📖 Example Categories
 
 ### Project Management
+
 - Sprint Planning and Management
 - Agile Board Workflows
 - Kanban Board Automation
@@ -115,6 +129,7 @@ await board.createUserStory(story);
 - Retrospective Management
 
 ### Task Management
+
 - Priority-based Task Systems
 - Bug Tracking Workflows
 - User Story Management
@@ -122,6 +137,7 @@ await board.createUserStory(story);
 - Task Templates
 
 ### Automation
+
 - Automation Rules Engine
 - Workflow Automation
 - Status Updates
@@ -129,6 +145,7 @@ await board.createUserStory(story);
 - Card Movement Rules
 
 ### Analytics & Reporting
+
 - Sprint Velocity Tracking
 - Burndown Charts
 - Project Health Metrics
@@ -136,6 +153,7 @@ await board.createUserStory(story);
 - Cycle Time Analysis
 
 ### Integration Examples
+
 - AI Image Generation (with Ideogram)
 - CI/CD Pipeline Integration
 - GitHub Integration Patterns
@@ -145,35 +163,42 @@ await board.createUserStory(story);
 ## 🏗️ Architecture Patterns
 
 ### Client Wrapper Pattern
+
 All examples use a client wrapper pattern for cleaner code:
+
 ```javascript
 class TrelloMCPClient {
-    async callTool(toolName, args) {
-        // MCP tool invocation
-    }
+  async callTool(toolName, args) {
+    // MCP tool invocation
+  }
 }
 ```
 
 ### Manager Classes
+
 Organize functionality into logical manager classes:
+
 - `SprintManager` - Sprint-specific operations
 - `BugTracker` - Bug management workflows
 - `ReleaseManager` - Release coordination
 - `TaskManager` - General task operations
 
 ### Type Safety (TypeScript)
+
 Full type definitions for all Trello entities:
+
 ```typescript
 interface TrelloCard {
-    id: string;
-    name: string;
-    // ... complete type definition
+  id: string;
+  name: string;
+  // ... complete type definition
 }
 ```
 
 ## 🔧 Common Patterns
 
 ### Error Handling
+
 ```javascript
 try {
     const card = await client.addCardToList({...});
@@ -187,6 +212,7 @@ try {
 ```
 
 ### Batch Operations
+
 ```javascript
 // Process multiple cards efficiently
 const cards = await client.getCardsByListId(listId);
@@ -195,14 +221,11 @@ await Promise.all(updates);
 ```
 
 ### Template Usage
+
 ```javascript
 // Use templates for consistent card creation
 const template = templateManager.getTemplate('bug-report');
-const card = await templateManager.createFromTemplate(
-    'bug-report',
-    listId,
-    customValues
-);
+const card = await templateManager.createFromTemplate('bug-report', listId, customValues);
 ```
 
 ## 🎯 Best Practices
@@ -236,6 +259,7 @@ const card = await templateManager.createFromTemplate(
 ## 💡 Contributing
 
 Have a great example to share? Contributions are welcome! Please:
+
 1. Follow the existing example structure
 2. Include comprehensive comments
 3. Provide error handling

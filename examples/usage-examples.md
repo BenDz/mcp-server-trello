@@ -25,7 +25,7 @@ First, configure your Trello credentials in your MCP client configuration:
   "mcpServers": {
     "trello": {
       "command": "npx",
-      "args": ["@delorenj/mcp-server-trello"],
+      "args": ["@BenDz/mcp-server-trello"],
       "env": {
         "TRELLO_API_KEY": "your-api-key",
         "TRELLO_TOKEN": "your-token",
@@ -41,43 +41,43 @@ First, configure your Trello credentials in your MCP client configuration:
 ```javascript
 // List all available workspaces
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "list_workspaces",
-  arguments: {}
+  server_name: 'trello',
+  tool_name: 'list_workspaces',
+  arguments: {},
 });
 
 // List all boards you have access to
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "list_boards",
-  arguments: {}
+  server_name: 'trello',
+  tool_name: 'list_boards',
+  arguments: {},
 });
 
 // Set an active workspace for the session
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "set_active_workspace",
+  server_name: 'trello',
+  tool_name: 'set_active_workspace',
   arguments: {
-    workspaceId: "60a7b5c9e4b0d8f12345678"
-  }
+    workspaceId: '60a7b5c9e4b0d8f12345678',
+  },
 });
 
 // List boards in a specific workspace
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "list_boards_in_workspace",
+  server_name: 'trello',
+  tool_name: 'list_boards_in_workspace',
   arguments: {
-    workspaceId: "60a7b5c9e4b0d8f12345678"
-  }
+    workspaceId: '60a7b5c9e4b0d8f12345678',
+  },
 });
 
 // Set an active board for future operations
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "set_active_board",
+  server_name: 'trello',
+  tool_name: 'set_active_board',
   arguments: {
-    boardId: "5d5a4b8f9e4b0d8123456789"
-  }
+    boardId: '5d5a4b8f9e4b0d8123456789',
+  },
 });
 ```
 
@@ -88,27 +88,27 @@ await use_mcp_tool({
 ```javascript
 // Create a board with default settings
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "create_board",
+  server_name: 'trello',
+  tool_name: 'create_board',
   arguments: {
-    name: "Q1 2025 Product Roadmap",
-    desc: "Quarterly planning and feature tracking for Q1 2025",
+    name: 'Q1 2025 Product Roadmap',
+    desc: 'Quarterly planning and feature tracking for Q1 2025',
     defaultLabels: true,
-    defaultLists: true
-  }
+    defaultLists: true,
+  },
 });
 
 // Create a board in a specific workspace without default lists
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "create_board",
+  server_name: 'trello',
+  tool_name: 'create_board',
   arguments: {
-    name: "Customer Support Tickets",
-    desc: "Track and manage customer support issues",
-    idOrganization: "60a7b5c9e4b0d8f12345678",
+    name: 'Customer Support Tickets',
+    desc: 'Track and manage customer support issues',
+    idOrganization: '60a7b5c9e4b0d8f12345678',
     defaultLabels: true,
-    defaultLists: false
-  }
+    defaultLists: false,
+  },
 });
 ```
 
@@ -117,18 +117,18 @@ await use_mcp_tool({
 ```javascript
 // Check current active board
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "get_active_board_info",
-  arguments: {}
+  server_name: 'trello',
+  tool_name: 'get_active_board_info',
+  arguments: {},
 });
 
 // Switch to a different board
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "set_active_board",
+  server_name: 'trello',
+  tool_name: 'set_active_board',
   arguments: {
-    boardId: "new-board-id-here"
-  }
+    boardId: 'new-board-id-here',
+  },
 });
 ```
 
@@ -139,16 +139,17 @@ await use_mcp_tool({
 ```javascript
 // Create a feature card with all details
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "add_card_to_list",
+  server_name: 'trello',
+  tool_name: 'add_card_to_list',
   arguments: {
-    listId: "5e5a4b8f9e4b0d8123456790",
-    name: "Implement OAuth 2.0 Authentication",
-    description: "## Overview\nAdd OAuth 2.0 support for third-party integrations\n\n## Requirements\n- Support Google OAuth\n- Support GitHub OAuth\n- Implement refresh token flow\n\n## Technical Notes\n- Use passport.js for authentication\n- Store tokens securely in database",
-    dueDate: "2025-02-15T17:00:00Z",
-    start: "2025-02-01",
-    labels: ["urgent", "backend", "security"]
-  }
+    listId: '5e5a4b8f9e4b0d8123456790',
+    name: 'Implement OAuth 2.0 Authentication',
+    description:
+      '## Overview\nAdd OAuth 2.0 support for third-party integrations\n\n## Requirements\n- Support Google OAuth\n- Support GitHub OAuth\n- Implement refresh token flow\n\n## Technical Notes\n- Use passport.js for authentication\n- Store tokens securely in database',
+    dueDate: '2025-02-15T17:00:00Z',
+    start: '2025-02-01',
+    labels: ['urgent', 'backend', 'security'],
+  },
 });
 ```
 
@@ -157,15 +158,16 @@ await use_mcp_tool({
 ```javascript
 // Update card details including marking as complete
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "update_card_details",
+  server_name: 'trello',
+  tool_name: 'update_card_details',
   arguments: {
-    cardId: "5f5a4b8f9e4b0d8123456791",
-    name: "OAuth Implementation - COMPLETED",
-    description: "✅ OAuth 2.0 implementation completed\n\nImplemented providers:\n- Google OAuth ✅\n- GitHub OAuth ✅\n- Microsoft Azure AD ✅",
+    cardId: '5f5a4b8f9e4b0d8123456791',
+    name: 'OAuth Implementation - COMPLETED',
+    description:
+      '✅ OAuth 2.0 implementation completed\n\nImplemented providers:\n- Google OAuth ✅\n- GitHub OAuth ✅\n- Microsoft Azure AD ✅',
     dueComplete: true,
-    labels: ["completed", "backend"]
-  }
+    labels: ['completed', 'backend'],
+  },
 });
 ```
 
@@ -174,22 +176,22 @@ await use_mcp_tool({
 ```javascript
 // Get full card details in JSON format
 const cardData = await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "get_card",
+  server_name: 'trello',
+  tool_name: 'get_card',
   arguments: {
-    cardId: "FdhbArbK",
-    includeMarkdown: false
-  }
+    cardId: 'FdhbArbK',
+    includeMarkdown: false,
+  },
 });
 
 // Get card data as formatted markdown
 const cardMarkdown = await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "get_card",
+  server_name: 'trello',
+  tool_name: 'get_card',
   arguments: {
-    cardId: "FdhbArbK",
-    includeMarkdown: true
-  }
+    cardId: 'FdhbArbK',
+    includeMarkdown: true,
+  },
 });
 ```
 
@@ -198,21 +200,21 @@ const cardMarkdown = await use_mcp_tool({
 ```javascript
 // Move card to "In Progress" list
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "move_card",
+  server_name: 'trello',
+  tool_name: 'move_card',
   arguments: {
-    cardId: "5f5a4b8f9e4b0d8123456791",
-    listId: "in-progress-list-id"
-  }
+    cardId: '5f5a4b8f9e4b0d8123456791',
+    listId: 'in-progress-list-id',
+  },
 });
 
 // Archive completed card
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "archive_card",
+  server_name: 'trello',
+  tool_name: 'archive_card',
   arguments: {
-    cardId: "5f5a4b8f9e4b0d8123456791"
-  }
+    cardId: '5f5a4b8f9e4b0d8123456791',
+  },
 });
 ```
 
@@ -222,32 +224,32 @@ await use_mcp_tool({
 
 ```javascript
 // Create a custom workflow with lists
-const lists = ["Backlog", "To Do", "In Progress", "Code Review", "Testing", "Done"];
+const lists = ['Backlog', 'To Do', 'In Progress', 'Code Review', 'Testing', 'Done'];
 
 for (const listName of lists) {
   await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "add_list_to_board",
+    server_name: 'trello',
+    tool_name: 'add_list_to_board',
     arguments: {
-      name: listName
-    }
+      name: listName,
+    },
   });
 }
 
 // Get all lists on current board
 const boardLists = await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "get_lists",
-  arguments: {}
+  server_name: 'trello',
+  tool_name: 'get_lists',
+  arguments: {},
 });
 
 // Get cards from a specific list
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "get_cards_by_list_id",
+  server_name: 'trello',
+  tool_name: 'get_cards_by_list_id',
   arguments: {
-    listId: "5e5a4b8f9e4b0d8123456790"
-  }
+    listId: '5e5a4b8f9e4b0d8123456790',
+  },
 });
 ```
 
@@ -256,11 +258,11 @@ await use_mcp_tool({
 ```javascript
 // Archive a completed sprint list
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "archive_list",
+  server_name: 'trello',
+  tool_name: 'archive_list',
   arguments: {
-    listId: "old-sprint-list-id"
-  }
+    listId: 'old-sprint-list-id',
+  },
 });
 ```
 
@@ -271,28 +273,28 @@ await use_mcp_tool({
 ```javascript
 // Get all items from "Acceptance Criteria" checklist
 const acceptanceCriteria = await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "get_acceptance_criteria",
-  arguments: {}
+  server_name: 'trello',
+  tool_name: 'get_acceptance_criteria',
+  arguments: {},
 });
 
 // Add item to a checklist
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "add_checklist_item",
+  server_name: 'trello',
+  tool_name: 'add_checklist_item',
   arguments: {
-    text: "User can login with email and password",
-    checkListName: "Acceptance Criteria"
-  }
+    text: 'User can login with email and password',
+    checkListName: 'Acceptance Criteria',
+  },
 });
 
 // Get complete checklist with completion percentage
 const checklist = await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "get_checklist_by_name",
+  server_name: 'trello',
+  tool_name: 'get_checklist_by_name',
   arguments: {
-    name: "Development Tasks"
-  }
+    name: 'Development Tasks',
+  },
 });
 console.log(`Checklist ${checklist.percentComplete}% complete`);
 ```
@@ -302,20 +304,20 @@ console.log(`Checklist ${checklist.percentComplete}% complete`);
 ```javascript
 // Find all checklist items mentioning "API"
 const apiItems = await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "find_checklist_items_by_description",
+  server_name: 'trello',
+  tool_name: 'find_checklist_items_by_description',
   arguments: {
-    description: "API"
-  }
+    description: 'API',
+  },
 });
 
 // Get all items from a specific checklist
 const deploymentChecklist = await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "get_checklist_items",
+  server_name: 'trello',
+  tool_name: 'get_checklist_items',
   arguments: {
-    name: "Deployment Checklist"
-  }
+    name: 'Deployment Checklist',
+  },
 });
 ```
 
@@ -326,22 +328,22 @@ const deploymentChecklist = await use_mcp_tool({
 ```javascript
 // Add a status update comment
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "add_comment",
+  server_name: 'trello',
+  tool_name: 'add_comment',
   arguments: {
-    cardId: "5f5a4b8f9e4b0d8123456791",
-    text: "🚀 Deployment completed successfully!\n\n**Environment**: Production\n**Version**: v2.3.1\n**Deployed by**: @johndoe\n**Time**: 2025-01-21 15:30 UTC"
-  }
+    cardId: '5f5a4b8f9e4b0d8123456791',
+    text: '🚀 Deployment completed successfully!\n\n**Environment**: Production\n**Version**: v2.3.1\n**Deployed by**: @johndoe\n**Time**: 2025-01-21 15:30 UTC',
+  },
 });
 
 // Update an existing comment
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "update_comment",
+  server_name: 'trello',
+  tool_name: 'update_comment',
   arguments: {
-    commentId: "comment-id-here",
-    text: "UPDATE: Rollback performed due to performance issues. Investigating root cause."
-  }
+    commentId: 'comment-id-here',
+    text: 'UPDATE: Rollback performed due to performance issues. Investigating root cause.',
+  },
 });
 ```
 
@@ -352,24 +354,24 @@ await use_mcp_tool({
 ```javascript
 // Attach a screenshot to a bug report card
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "attach_image_to_card",
+  server_name: 'trello',
+  tool_name: 'attach_image_to_card',
   arguments: {
-    cardId: "bug-report-card-id",
-    imageUrl: "https://example.com/screenshots/bug-console-error.png",
-    name: "Console Error Screenshot"
-  }
+    cardId: 'bug-report-card-id',
+    imageUrl: 'https://example.com/screenshots/bug-console-error.png',
+    name: 'Console Error Screenshot',
+  },
 });
 
 // Attach a design mockup
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "attach_image_to_card",
+  server_name: 'trello',
+  tool_name: 'attach_image_to_card',
   arguments: {
-    cardId: "feature-card-id",
-    imageUrl: "https://figma.com/exports/dashboard-mockup.png",
-    name: "Dashboard UI Mockup v2"
-  }
+    cardId: 'feature-card-id',
+    imageUrl: 'https://figma.com/exports/dashboard-mockup.png',
+    name: 'Dashboard UI Mockup v2',
+  },
 });
 ```
 
@@ -378,38 +380,38 @@ await use_mcp_tool({
 ```javascript
 // Attach a PDF document
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "attach_file_to_card",
+  server_name: 'trello',
+  tool_name: 'attach_file_to_card',
   arguments: {
-    cardId: "project-card-id",
-    fileUrl: "https://docs.example.com/project-specification.pdf",
-    name: "Project Specification v1.2",
-    mimeType: "application/pdf"
-  }
+    cardId: 'project-card-id',
+    fileUrl: 'https://docs.example.com/project-specification.pdf',
+    name: 'Project Specification v1.2',
+    mimeType: 'application/pdf',
+  },
 });
 
 // Attach a video recording
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "attach_file_to_card",
+  server_name: 'trello',
+  tool_name: 'attach_file_to_card',
   arguments: {
-    cardId: "demo-card-id",
-    fileUrl: "https://videos.example.com/product-demo.mp4",
-    name: "Product Demo Recording",
-    mimeType: "video/mp4"
-  }
+    cardId: 'demo-card-id',
+    fileUrl: 'https://videos.example.com/product-demo.mp4',
+    name: 'Product Demo Recording',
+    mimeType: 'video/mp4',
+  },
 });
 
 // Attach a local file
 await use_mcp_tool({
-  server_name: "trello",
-  tool_name: "attach_file_to_card",
+  server_name: 'trello',
+  tool_name: 'attach_file_to_card',
   arguments: {
-    cardId: "documentation-card-id",
-    fileUrl: "file:///Users/john/Documents/api-docs.md",
-    name: "API Documentation",
-    mimeType: "text/markdown"
-  }
+    cardId: 'documentation-card-id',
+    fileUrl: 'file:///Users/john/Documents/api-docs.md',
+    name: 'API Documentation',
+    mimeType: 'text/markdown',
+  },
 });
 ```
 
@@ -423,32 +425,32 @@ async function planSprint(sprintListId, cardIds) {
   for (const cardId of cardIds) {
     // Move card to sprint list
     await use_mcp_tool({
-      server_name: "trello",
-      tool_name: "move_card",
+      server_name: 'trello',
+      tool_name: 'move_card',
       arguments: {
         cardId: cardId,
-        listId: sprintListId
-      }
+        listId: sprintListId,
+      },
     });
 
     // Add sprint label
     await use_mcp_tool({
-      server_name: "trello",
-      tool_name: "update_card_details",
+      server_name: 'trello',
+      tool_name: 'update_card_details',
       arguments: {
         cardId: cardId,
-        labels: ["sprint-23", "q1-2025"]
-      }
+        labels: ['sprint-23', 'q1-2025'],
+      },
     });
 
     // Add comment about sprint assignment
     await use_mcp_tool({
-      server_name: "trello",
-      tool_name: "add_comment",
+      server_name: 'trello',
+      tool_name: 'add_comment',
       arguments: {
         cardId: cardId,
-        text: "Assigned to Sprint 23 (Jan 22 - Feb 5, 2025)"
-      }
+        text: 'Assigned to Sprint 23 (Jan 22 - Feb 5, 2025)',
+      },
     });
   }
 }
@@ -460,35 +462,35 @@ async function planSprint(sprintListId, cardIds) {
 // Get all cards assigned to current user
 async function getMyDailyUpdate() {
   const myCards = await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "get_my_cards",
-    arguments: {}
+    server_name: 'trello',
+    tool_name: 'get_my_cards',
+    arguments: {},
   });
 
   // Categorize by list
   const cardsByStatus = {
     inProgress: [],
     blocked: [],
-    completed: []
+    completed: [],
   };
 
   for (const card of myCards) {
     // Get full card details including list
     const fullCard = await use_mcp_tool({
-      server_name: "trello",
-      tool_name: "get_card",
+      server_name: 'trello',
+      tool_name: 'get_card',
       arguments: {
         cardId: card.id,
-        includeMarkdown: false
-      }
+        includeMarkdown: false,
+      },
     });
 
     // Categorize based on list name
-    if (fullCard.list.name === "In Progress") {
+    if (fullCard.list.name === 'In Progress') {
       cardsByStatus.inProgress.push(fullCard);
-    } else if (fullCard.list.name === "Blocked") {
+    } else if (fullCard.list.name === 'Blocked') {
       cardsByStatus.blocked.push(fullCard);
-    } else if (fullCard.list.name === "Done") {
+    } else if (fullCard.list.name === 'Done') {
       cardsByStatus.completed.push(fullCard);
     }
   }
@@ -503,19 +505,21 @@ async function getMyDailyUpdate() {
 // Monitor recent board activity
 async function monitorBoardActivity(limit = 20) {
   const activities = await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "get_recent_activity",
+    server_name: 'trello',
+    tool_name: 'get_recent_activity',
     arguments: {
-      limit: limit
-    }
+      limit: limit,
+    },
   });
 
   // Filter for important updates
   const importantActivities = activities.filter(activity => {
-    return activity.type === 'commentCard' ||
-           activity.type === 'addAttachmentToCard' ||
-           activity.type === 'updateCard' ||
-           activity.type === 'moveCardToBoard';
+    return (
+      activity.type === 'commentCard' ||
+      activity.type === 'addAttachmentToCard' ||
+      activity.type === 'updateCard' ||
+      activity.type === 'moveCardToBoard'
+    );
   });
 
   return importantActivities;
@@ -530,80 +534,81 @@ async function monitorBoardActivity(limit = 20) {
 async function createBugReport(bugDetails) {
   // Create bug card
   const bugCard = await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "add_card_to_list",
+    server_name: 'trello',
+    tool_name: 'add_card_to_list',
     arguments: {
-      listId: "bug-triage-list-id",
+      listId: 'bug-triage-list-id',
       name: `BUG: ${bugDetails.title}`,
       description: `## Bug Report\n\n**Severity**: ${bugDetails.severity}\n**Environment**: ${bugDetails.environment}\n\n### Description\n${bugDetails.description}\n\n### Steps to Reproduce\n${bugDetails.steps}\n\n### Expected Behavior\n${bugDetails.expected}\n\n### Actual Behavior\n${bugDetails.actual}`,
-      labels: ["bug", bugDetails.severity],
-      dueDate: bugDetails.severity === "critical" ?
-               new Date(Date.now() + 24*60*60*1000).toISOString() : // 24 hours for critical
-               new Date(Date.now() + 72*60*60*1000).toISOString()   // 72 hours for others
-    }
+      labels: ['bug', bugDetails.severity],
+      dueDate:
+        bugDetails.severity === 'critical'
+          ? new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString() // 24 hours for critical
+          : new Date(Date.now() + 72 * 60 * 60 * 1000).toISOString(), // 72 hours for others
+    },
   });
 
   // Add acceptance criteria checklist
   await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "add_checklist_item",
+    server_name: 'trello',
+    tool_name: 'add_checklist_item',
     arguments: {
-      text: "Bug is reproducible",
-      checkListName: "QA Checklist"
-    }
+      text: 'Bug is reproducible',
+      checkListName: 'QA Checklist',
+    },
   });
 
   await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "add_checklist_item",
+    server_name: 'trello',
+    tool_name: 'add_checklist_item',
     arguments: {
-      text: "Root cause identified",
-      checkListName: "QA Checklist"
-    }
+      text: 'Root cause identified',
+      checkListName: 'QA Checklist',
+    },
   });
 
   await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "add_checklist_item",
+    server_name: 'trello',
+    tool_name: 'add_checklist_item',
     arguments: {
-      text: "Fix implemented and tested",
-      checkListName: "QA Checklist"
-    }
+      text: 'Fix implemented and tested',
+      checkListName: 'QA Checklist',
+    },
   });
 
   await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "add_checklist_item",
+    server_name: 'trello',
+    tool_name: 'add_checklist_item',
     arguments: {
-      text: "Regression tests added",
-      checkListName: "QA Checklist"
-    }
+      text: 'Regression tests added',
+      checkListName: 'QA Checklist',
+    },
   });
 
   // Attach screenshot if provided
   if (bugDetails.screenshotUrl) {
     await use_mcp_tool({
-      server_name: "trello",
-      tool_name: "attach_image_to_card",
+      server_name: 'trello',
+      tool_name: 'attach_image_to_card',
       arguments: {
         cardId: bugCard.id,
         imageUrl: bugDetails.screenshotUrl,
-        name: "Bug Screenshot"
-      }
+        name: 'Bug Screenshot',
+      },
     });
   }
 
   // Attach logs if provided
   if (bugDetails.logsUrl) {
     await use_mcp_tool({
-      server_name: "trello",
-      tool_name: "attach_file_to_card",
+      server_name: 'trello',
+      tool_name: 'attach_file_to_card',
       arguments: {
         cardId: bugCard.id,
         fileUrl: bugDetails.logsUrl,
-        name: "Error Logs",
-        mimeType: "text/plain"
-      }
+        name: 'Error Logs',
+        mimeType: 'text/plain',
+      },
     });
   }
 
@@ -617,61 +622,61 @@ async function createBugReport(bugDetails) {
 async function prepareRelease(version, releaseDate) {
   // Create release card
   const releaseCard = await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "add_card_to_list",
+    server_name: 'trello',
+    tool_name: 'add_card_to_list',
     arguments: {
-      listId: "releases-list-id",
+      listId: 'releases-list-id',
       name: `Release ${version}`,
       description: `# Release ${version}\n\n**Target Date**: ${releaseDate}\n**Status**: Preparing`,
       dueDate: new Date(releaseDate).toISOString(),
-      labels: ["release", "high-priority"]
-    }
+      labels: ['release', 'high-priority'],
+    },
   });
 
   // Add release checklist items
   const releaseChecklist = [
-    "Code freeze completed",
-    "All tests passing",
-    "Security scan completed",
-    "Performance benchmarks verified",
-    "Documentation updated",
-    "Release notes prepared",
-    "Stakeholders notified",
-    "Deployment plan reviewed",
-    "Rollback plan prepared",
-    "Production deployment completed"
+    'Code freeze completed',
+    'All tests passing',
+    'Security scan completed',
+    'Performance benchmarks verified',
+    'Documentation updated',
+    'Release notes prepared',
+    'Stakeholders notified',
+    'Deployment plan reviewed',
+    'Rollback plan prepared',
+    'Production deployment completed',
   ];
 
   for (const item of releaseChecklist) {
     await use_mcp_tool({
-      server_name: "trello",
-      tool_name: "add_checklist_item",
+      server_name: 'trello',
+      tool_name: 'add_checklist_item',
       arguments: {
         text: item,
-        checkListName: "Release Checklist"
-      }
+        checkListName: 'Release Checklist',
+      },
     });
   }
 
   // Find all cards targeted for this release
   const allCards = await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "get_cards_by_list_id",
+    server_name: 'trello',
+    tool_name: 'get_cards_by_list_id',
     arguments: {
-      listId: "done-list-id"
-    }
+      listId: 'done-list-id',
+    },
   });
 
   // Link related cards by adding comments
   for (const card of allCards) {
     if (card.labels.includes(`release-${version}`)) {
       await use_mcp_tool({
-        server_name: "trello",
-        tool_name: "add_comment",
+        server_name: 'trello',
+        tool_name: 'add_comment',
         arguments: {
           cardId: card.id,
-          text: `Included in Release ${version} - https://trello.com/c/${releaseCard.shortLink}`
-        }
+          text: `Included in Release ${version} - https://trello.com/c/${releaseCard.shortLink}`,
+        },
       });
     }
   }
@@ -686,9 +691,9 @@ async function prepareRelease(version, releaseDate) {
 async function generateProjectHealthReport() {
   // Get all lists
   const lists = await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "get_lists",
-    arguments: {}
+    server_name: 'trello',
+    tool_name: 'get_lists',
+    arguments: {},
   });
 
   const report = {
@@ -698,23 +703,23 @@ async function generateProjectHealthReport() {
       totalCards: 0,
       overdueCards: [],
       blockedCards: [],
-      completionRate: 0
-    }
+      completionRate: 0,
+    },
   };
 
   // Analyze each list
   for (const list of lists) {
     const cards = await use_mcp_tool({
-      server_name: "trello",
-      tool_name: "get_cards_by_list_id",
+      server_name: 'trello',
+      tool_name: 'get_cards_by_list_id',
       arguments: {
-        listId: list.id
-      }
+        listId: list.id,
+      },
     });
 
     report.lists[list.name] = {
       cardCount: cards.length,
-      cards: cards
+      cards: cards,
     };
 
     report.metrics.totalCards += cards.length;
@@ -726,33 +731,33 @@ async function generateProjectHealthReport() {
         report.metrics.overdueCards.push({
           name: card.name,
           due: card.due,
-          list: list.name
+          list: list.name,
         });
       }
 
       // Check for blocked cards (by label)
-      if (card.labels && card.labels.some(label => label.name === "blocked")) {
+      if (card.labels && card.labels.some(label => label.name === 'blocked')) {
         report.metrics.blockedCards.push({
           name: card.name,
-          list: list.name
+          list: list.name,
         });
       }
     }
   }
 
   // Calculate completion rate
-  const doneCards = report.lists["Done"]?.cardCount || 0;
+  const doneCards = report.lists['Done']?.cardCount || 0;
   if (report.metrics.totalCards > 0) {
     report.metrics.completionRate = (doneCards / report.metrics.totalCards) * 100;
   }
 
   // Get recent activity
   const recentActivity = await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "get_recent_activity",
+    server_name: 'trello',
+    tool_name: 'get_recent_activity',
     arguments: {
-      limit: 50
-    }
+      limit: 50,
+    },
   });
 
   report.recentActivity = recentActivity;
@@ -768,34 +773,34 @@ async function generateProjectHealthReport() {
 async function addAIGeneratedMockup(cardId, designPrompt) {
   // Generate image using Ideogram MCP server
   const generatedImage = await use_mcp_tool({
-    server_name: "ideogram",
-    tool_name: "generate_image",
+    server_name: 'ideogram',
+    tool_name: 'generate_image',
     arguments: {
       prompt: designPrompt,
-      aspect_ratio: "16:9",
-      model: "V_2"
-    }
+      aspect_ratio: '16:9',
+      model: 'V_2',
+    },
   });
 
   // Attach the generated image to Trello card
   await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "attach_image_to_card",
+    server_name: 'trello',
+    tool_name: 'attach_image_to_card',
     arguments: {
       cardId: cardId,
       imageUrl: generatedImage.data[0].url,
-      name: `AI Mockup - ${new Date().toLocaleDateString()}`
-    }
+      name: `AI Mockup - ${new Date().toLocaleDateString()}`,
+    },
   });
 
   // Add a comment about the generation
   await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "add_comment",
+    server_name: 'trello',
+    tool_name: 'add_comment',
     arguments: {
       cardId: cardId,
-      text: `🎨 AI-generated mockup added\n\n**Prompt used**: ${designPrompt}\n**Generated at**: ${new Date().toISOString()}`
-    }
+      text: `🎨 AI-generated mockup added\n\n**Prompt used**: ${designPrompt}\n**Generated at**: ${new Date().toISOString()}`,
+    },
   });
 }
 ```
@@ -818,16 +823,16 @@ async function addAIGeneratedMockup(cardId, designPrompt) {
 ```javascript
 try {
   const result = await use_mcp_tool({
-    server_name: "trello",
-    tool_name: "add_card_to_list",
+    server_name: 'trello',
+    tool_name: 'add_card_to_list',
     arguments: {
-      listId: "list-id",
-      name: "New Task"
-    }
+      listId: 'list-id',
+      name: 'New Task',
+    },
   });
-  console.log("Card created successfully:", result);
+  console.log('Card created successfully:', result);
 } catch (error) {
-  console.error("Failed to create card:", error);
+  console.error('Failed to create card:', error);
   // Handle error appropriately
   // - Retry with exponential backoff for rate limits
   // - Log and alert for authentication errors

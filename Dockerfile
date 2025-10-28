@@ -1,6 +1,6 @@
 # Use official Bun image as builder
 FROM oven/bun:1-alpine AS builder
-LABEL org.opencontainers.image.source=https://github.com/delorenj/mcp-server-trello
+LABEL org.opencontainers.image.source=https://github.com/BenDz/mcp-server-trello
 
 # Set the working directory to /app
 WORKDIR /app

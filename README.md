@@ -1,8 +1,8 @@
 # MCP Server Trello
 
 [![Verified on MseeP](https://mseep.ai/badge.svg)](https://mseep.ai/app/27359682-7632-4ba7-981d-7dfecadf1c4b)
-[![MCP Registry](https://img.shields.io/badge/MCP-Registry-blue)](https://registry.modelcontextprotocol.io/servers/io.github.delorenj/mcp-server-trello)
-[![npm version](https://badge.fury.io/js/%40delorenj%2Fmcp-server-trello.svg)](https://badge.fury.io/js/%40delorenj%2Fmcp-server-trello)
+[![MCP Registry](https://img.shields.io/badge/MCP-Registry-blue)](https://registry.modelcontextprotocol.io/servers/io.github.BenDz/mcp-server-trello)
+[![npm version](https://badge.fury.io/js/%40BenDz%2Fmcp-server-trello.svg)](https://badge.fury.io/js/%40BenDz%2Fmcp-server-trello)
 
 <a href="https://glama.ai/mcp/servers/klqkamy7wt"><img width="380" height="200" src="https://glama.ai/mcp/servers/klqkamy7wt/badge" alt="Server Trello MCP server" /></a>
 
@@ -14,9 +14,9 @@ A Model Context Protocol (MCP) server that provides tools for interacting with T
 
 ### ✨ New in This Release:
 
-  - 🚀 **Performance Boost**: Enjoy a faster, more responsive server.
-  -  BUN **Bun-Powered**: The project now runs on the lightning-fast Bun runtime.
-  - 📖 **Comprehensive Examples**: A new `examples` directory with detailed implementations in JavaScript, Python, and TypeScript.
+- 🚀 **Performance Boost**: Enjoy a faster, more responsive server.
+- BUN **Bun-Powered**: The project now runs on the lightning-fast Bun runtime.
+- 📖 **Comprehensive Examples**: A new `examples` directory with detailed implementations in JavaScript, Python, and TypeScript.
 
 **Plus:** Modern MCP SDK architecture, enhanced type safety, and comprehensive documentation!
 
@@ -26,16 +26,16 @@ For a detailed list of changes, please refer to the [CHANGELOG.md](CHANGELOG.md)
 
 ## Features
 
-  - **Full Trello Board Integration**: Interact with cards, lists, and board activities
-  - **🆕 Complete Card Data Extraction**: Fetch all card details including checklists, attachments, labels, members, and comments
-  - **💬 Comment Management**: Add, update, delete, and retrieve comments on cards
-  - **File Attachments**: Attach any type of file to cards (PDFs, documents, videos, images, etc.) from URLs
-  - **Built-in Rate Limiting**: Respects Trello's API limits (300 requests/10s per API key, 100 requests/10s per token)
-  - **Type-Safe Implementation**: Written in TypeScript with comprehensive type definitions
-  - **Input Validation**: Robust validation for all API inputs
-  - **Error Handling**: Graceful error handling with informative messages
-  - **Dynamic Board Selection**: Switch between boards and workspaces without restarting
-  - **Markdown Formatting**: Export card data in human-readable markdown format
+- **Full Trello Board Integration**: Interact with cards, lists, and board activities
+- **🆕 Complete Card Data Extraction**: Fetch all card details including checklists, attachments, labels, members, and comments
+- **💬 Comment Management**: Add, update, delete, and retrieve comments on cards
+- **File Attachments**: Attach any type of file to cards (PDFs, documents, videos, images, etc.) from URLs
+- **Built-in Rate Limiting**: Respects Trello's API limits (300 requests/10s per API key, 100 requests/10s per token)
+- **Type-Safe Implementation**: Written in TypeScript with comprehensive type definitions
+- **Input Validation**: Robust validation for all API inputs
+- **Error Handling**: Graceful error handling with informative messages
+- **Dynamic Board Selection**: Switch between boards and workspaces without restarting
+- **Markdown Formatting**: Export card data in human-readable markdown format
 
 ## Installation
 
@@ -45,7 +45,7 @@ The MCP Server Trello is now available in the official MCP Registry\! MCP client
 
 For clients that support the MCP Registry:
 
-1.  Search for "mcp-server-trello" or "io.github.delorenj/mcp-server-trello"
+1.  Search for "mcp-server-trello" or "io.github.BenDz/mcp-server-trello"
 2.  Install directly from the registry
 3.  Configure with your Trello credentials
 
@@ -55,16 +55,16 @@ If you have [Bun](https://bun.sh) installed, using `bunx` is the fastest way to 
 
 ```json
 {
-  "mcpServers": {
-    "trello": {
-      "command": "bunx",
-      "args": ["@delorenj/mcp-server-trello"],
-      "env": {
-        "TRELLO_API_KEY": "your-api-key",
-        "TRELLO_TOKEN": "your-token"
-      }
-    }
-  }
+  "mcpServers": {
+    "trello": {
+      "command": "bunx",
+      "args": ["@BenDz/mcp-server-trello"],
+      "env": {
+        "TRELLO_API_KEY": "your-api-key",
+        "TRELLO_TOKEN": "your-token"
+      }
+    }
+  }
 }
 ```
 
@@ -74,16 +74,16 @@ You can still use `npx` or `pnpx`. This doesn't require a global install and wil
 
 ```json
 {
-  "mcpServers": {
-    "trello": {
-      "command": "bunx",
-      "args": ["@delorenj/mcp-server-trello"],
-      "env": {
-        "TRELLO_API_KEY": "your-api-key",
-        "TRELLO_TOKEN": "your-token"
-      }
-    }
-  }
+  "mcpServers": {
+    "trello": {
+      "command": "bunx",
+      "args": ["@BenDz/mcp-server-trello"],
+      "env": {
+        "TRELLO_API_KEY": "your-api-key",
+        "TRELLO_TOKEN": "your-token"
+      }
+    }
+  }
 }
 ```
 
@@ -91,16 +91,16 @@ Or if you're using mise, you can explicitly execute `bunx` with `mise exec`:
 
 ```json
 {
-  "mcpServers": {
-    "trello": {
-      "command": "mise",
-      "args": ["x", "--", "bunx", "@delorenj/mcp-server-trello"],
-      "env": {
-        "TRELLO_API_KEY": "your-api-key",
-        "TRELLO_TOKEN": "your-token"
-      }
-    }
-  }
+  "mcpServers": {
+    "trello": {
+      "command": "mise",
+      "args": ["x", "--", "bunx", "@BenDz/mcp-server-trello"],
+      "env": {
+        "TRELLO_API_KEY": "your-api-key",
+        "TRELLO_TOKEN": "your-token"
+      }
+    }
+  }
 }
 ```
 
@@ -112,8 +112,8 @@ https://trello.com/1/authorize?expiration=never&name=YOUR_APP_NAME&scope=read,wr
 
 Replace:
 
-  * `YOUR_APP_NAME` with a name for your application (e.g., "My Trello Integration"). This name is shown to the user on the Trello authorization screen.
-  * `YOUR_API_KEY` with the API key for your Trello Power-Up
+- `YOUR_APP_NAME` with a name for your application (e.g., "My Trello Integration"). This name is shown to the user on the Trello authorization screen.
+- `YOUR_API_KEY` with the API key for your Trello Power-Up
 
 This will generate the token required for integration.
 
@@ -141,23 +141,23 @@ mise install
 If you prefer using `npm` directly:
 
 ```bash
-npm install -g @delorenj/mcp-server-trello
+npm install -g @BenDz/mcp-server-trello
 ```
 
-*(A fast alternative is `bun add -g @delorenj/mcp-server-trello`)*
+_(A fast alternative is `bun add -g @BenDz/mcp-server-trello`)_
 
 Then use `npx mcp-server-trello` as the command in your MCP configuration.
 
 ### Installing via Smithery
 
-To install Trello Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@delorenj/mcp-server-trello):
+To install Trello Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@BenDz/mcp-server-trello):
 
 ```bash
 # Using bunx (recommended)
-bunx -y @smithery/cli install @delorenj/mcp-server-trello --client claude
+bunx -y @smithery/cli install @BenDz/mcp-server-trello --client claude
 
 # Using npx
-npx -y @smithery/cli install @delorenj/mcp-server-trello --client claude
+npx -y @smithery/cli install @BenDz/mcp-server-trello --client claude
 ```
 
 ### Docker Installation
@@ -169,7 +169,7 @@ For containerized environments:
 <!-- end list -->
 
 ```bash
-git clone https://github.com/delorenj/mcp-server-trello
+git clone https://github.com/BenDz/mcp-server-trello
 cd mcp-server-trello
 ```
 
@@ -209,10 +209,10 @@ TRELLO_WORKSPACE_ID=your-workspace-id
 
 You can get these values from:
 
-  - API Key: [https://trello.com/app-key](https://trello.com/app-key)
-  - Token: Generate using your API key
-  - Board ID (optional, deprecated): Found in the board URL (e.g., [suspicious link removed])
-  - Workspace ID: Found in workspace settings or using `list_workspaces` tool
+- API Key: [https://trello.com/app-key](https://trello.com/app-key)
+- Token: Generate using your API key
+- Board ID (optional, deprecated): Found in the board URL (e.g., [suspicious link removed])
+- Workspace ID: Found in workspace settings or using `list_workspaces` tool
 
 ### Board and Workspace Management
 
@@ -295,8 +295,8 @@ This allows you to work with multiple boards and workspaces without restarting t
 
 When working with dates in the Trello MCP server, please note the different format requirements:
 
-  - **Due Date (`dueDate`)**: Accepts full ISO 8601 format with time (e.g., `2023-12-31T12:00:00Z`)
-  - **Start Date (`start`)**: Accepts date only in YYYY-MM-DD format (e.g., `2025-08-05`)
+- **Due Date (`dueDate`)**: Accepts full ISO 8601 format with time (e.g., `2023-12-31T12:00:00Z`)
+- **Start Date (`start`)**: Accepts date only in YYYY-MM-DD format (e.g., `2025-08-05`)
 
 This distinction follows Trello's API conventions where start dates are day-based markers while due dates can include specific times.
 
@@ -304,7 +304,7 @@ This distinction follows Trello's API conventions where start dates are day-base
 
 ### Checklist Management Tools 🆕
 
-#### get\_checklist\_items
+#### get_checklist_items
 
 Get all items from a checklist by name.
 
@@ -318,7 +318,7 @@ Get all items from a checklist by name.
 }
 ```
 
-#### add\_checklist\_item
+#### add_checklist_item
 
 Add a new item to an existing checklist.
 
@@ -333,7 +333,7 @@ Add a new item to an existing checklist.
 }
 ```
 
-#### find\_checklist\_items\_by\_description
+#### find_checklist_items_by_description
 
 Search for checklist items containing specific text.
 
@@ -347,7 +347,7 @@ nbsp; }
 }
 ```
 
-#### get\_acceptance\_criteria
+#### get_acceptance_criteria
 
 Get all items from the "Acceptance Criteria" checklist.
 
@@ -360,7 +360,7 @@ Get all items from the "Acceptance Criteria" checklist.
 }
 ```
 
-#### get\_checklist\_by\_name
+#### get_checklist_by_name
 
 Get a complete checklist with all items and completion percentage.
 
@@ -376,12 +376,12 @@ Get a complete checklist with all items and completion percentage.
 
 **Returns:** `CheckList` object with:
 
-  - `id`: Checklist identifier
-  - `name`: Checklist name
-  - `items`: Array of `CheckListItem` objects
-  - `percentComplete`: Completion percentage (0-100)
+- `id`: Checklist identifier
+- `name`: Checklist name
+- `items`: Array of `CheckListItem` objects
+- `percentComplete`: Completion percentage (0-100)
 
-### get\_card 🆕
+### get_card 🆕
 
 Get comprehensive details of a specific Trello card with human-level parity.
 
@@ -397,16 +397,16 @@ Get comprehensive details of a specific Trello card with human-level parity.
 
 **Returns:** Complete card data including:
 
-  - ✅ Checklists with item states and assignments
-  - 📎 Attachments with previews and metadata
-  - 🏷️ Labels with names and colors
-  - 👥 Assigned members
-  - 💬 Comments and activity
-  - 📊 Statistics (badges)
-  - 🎨 Cover images
-  - 📍 Board and list context
+- ✅ Checklists with item states and assignments
+- 📎 Attachments with previews and metadata
+- 🏷️ Labels with names and colors
+- 👥 Assigned members
+- 💬 Comments and activity
+- 📊 Statistics (badges)
+- 🎨 Cover images
+- 📍 Board and list context
 
-### get\_cards\_by\_list\_id
+### get_cards_by_list_id
 
 Fetch all cards from a specific list.
 
@@ -420,7 +420,7 @@ Fetch all cards from a specific list.
 }
 ```
 
-### get\_lists
+### get_lists
 
 Retrieve all lists from a board.
 
@@ -433,7 +433,7 @@ Retrieve all lists from a board.
 }
 ```
 
-### get\_recent\_activity
+### get_recent_activity
 
 Fetch recent activity on a board.
 
@@ -447,7 +447,7 @@ Fetch recent activity on a board.
 }
 ```
 
-### add\_card\_to\_list
+### add_card_to_list
 
 Add a new card to a specified list.
 
@@ -466,7 +466,7 @@ Add a new card to a specified list.
 }
 ```
 
-### update\_card\_details
+### update_card_details
 
 Update an existing card's details.
 
@@ -486,7 +486,7 @@ Update an existing card's details.
 }
 ```
 
-### archive\_card
+### archive_card
 
 Send a card to the archive.
 
@@ -500,7 +500,7 @@ Send a card to the archive.
 }
 ```
 
-### add\_list\_to\_board
+### add_list_to_board
 
 Add a new list to a board.
 
@@ -514,7 +514,7 @@ nbsp; name: 'add_list_to_board',
 }
 ```
 
-### archive\_list
+### archive_list
 
 Send a list to the archive.
 
@@ -528,7 +528,7 @@ Send a list to the archive.
 }
 ```
 
-### get\_my\_cards
+### get_my_cards
 
 Fetch all cards assigned to the current user.
 
@@ -539,7 +539,7 @@ Fetch all cards assigned to the current user.
 }
 ```
 
-### move\_card
+### move_card
 
 Move a card to a different list.
 
@@ -554,7 +554,7 @@ s;   cardId: string,    // ID of the card to move
 }
 ```
 
-### attach\_image\_to\_card
+### attach_image_to_card
 
 Attach an image to a card directly from a URL.
 
@@ -570,7 +570,7 @@ Attach an image to a card directly from a URL.
 }
 ```
 
-### attach\_file\_to\_card
+### attach_file_to_card
 
 Attach any type of file to a card from a URL or a local file path (e.g., `file:///path/to/your/file.pdf`).
 
@@ -587,7 +587,7 @@ nbsp; arguments: {
 }
 ```
 
-### attach\_link\_to\_card
+### attach_link_to_card
 
 Attach a link/URL to a card. This is useful for attaching web links, documentation, or any other URL references to a Trello card.
 
@@ -605,7 +605,7 @@ Attach a link/URL to a card. This is useful for attaching web links, documentati
 
 ### Comment Management Tools
 
-#### add\_comment
+#### add_comment
 
 Add a comment to a Trello card.
 
@@ -619,7 +619,7 @@ Add a comment to a Trello card.
 }
 ```
 
-#### update\_comment
+#### update_comment
 
 Update an existing comment on a card.
 
@@ -633,7 +633,7 @@ Update an existing comment on a card.
 }
 ```
 
-#### delete\_comment
+#### delete_comment
 
 Delete a comment from a card.
 
@@ -646,7 +646,7 @@ Delete a comment from a card.
 }
 ```
 
-#### get\_card\_comments
+#### get_card_comments
 
 Retrieve all comments from a specific card without fetching all card data.
 
@@ -660,8 +660,7 @@ Retrieve all comments from a specific card without fetching all card data.
 }
 ```
 
-
-### list\_boards
+### list_boards
 
 List all boards the user has access to.
 
@@ -672,7 +671,7 @@ List all boards the user has access to.
 }
 ```
 
-### set\_active\_board
+### set_active_board
 
 Set the active board for future operations.
 
@@ -685,7 +684,7 @@ Set the active board for future operations.
 }
 ```
 
-### list\_workspaces
+### list_workspaces
 
 List all workspaces the user has access to.
 
@@ -696,7 +695,7 @@ s; name: 'list_workspaces',
 }
 ```
 
-### set\_active\_workspace
+### set_active_workspace
 
 Set the active workspace for future operations.
 
@@ -709,7 +708,7 @@ Set the active workspace for future operations.
 }
 ```
 
-### list\_boards\_in\_workspace
+### list_boards_in_workspace
 
 List all boards in a specific workspace.
 
@@ -722,7 +721,7 @@ List all boards in a specific workspace.
 }
 ```
 
-### get\_active\_board\_info
+### get_active_board_info
 
 Get information about the currently active board.
 
@@ -782,7 +781,7 @@ Add both servers to your Claude Desktop configuration. Use `bunx` for the fastes
   "mcpServers": {
     "trello": {
       "command": "bunx",
-      "args": ["@delorenj/mcp-server-trello"],
+      "args": ["@BenDz/mcp-server-trello"],
 nbsp;   "env": {
         "TRELLO_API_KEY": "your-trello-api-key",
         "TRELLO_TOKEN": "your-trello-token"
@@ -805,8 +804,8 @@ Now you can seamlessly create visual content and organize it in Trello, all with
 
 The server implements a token bucket algorithm for rate limiting to comply with Trello's API limits:
 
-  - 300 requests per 10 seconds per API key
-  - 100 requests per 10 seconds per token
+- 300 requests per 10 seconds per API key
+- 100 requests per 10 seconds per token
 
 Rate limiting is handled automatically, and requests will be queued if limits are reached.
 
@@ -814,17 +813,17 @@ Rate limiting is handled automatically, and requests will be queued if limits ar
 
 The server provides detailed error messages for various scenarios:
 
-  - Invalid input parameters
-  - Rate limit exceeded
-  - API authentication errors
-  - Network issues
-  - Invalid board/list/card IDs
+- Invalid input parameters
+- Rate limit exceeded
+- API authentication errors
+- Network issues
+- Invalid board/list/card IDs
 
 ## Development
 
 ### Prerequisites
 
-  - [Bun](https://bun.sh) (v1.0.0 or higher)
+- [Bun](https://bun.sh) (v1.0.0 or higher)
 
 ### Setup
 
@@ -833,7 +832,7 @@ The server provides detailed error messages for various scenarios:
 <!-- end list -->
 
 ```bash
-git clone https://github.com/delorenj/mcp-server-trello
+git clone https://github.com/BenDz/mcp-server-trello
 cd mcp-server-trello
 ```
 
@@ -879,5 +878,5 @@ This project is licensed under the MIT License - see the [LICENSE](https://www.g
 
 ## Acknowledgments
 
-  - Built with the [Model Context Protocol SDK](https://github.com/modelcontextprotocol/typescript-sdk)
-  - Uses the [Trello REST API](https://developer.atlassian.com/cloud/trello/rest/)
+- Built with the [Model Context Protocol SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+- Uses the [Trello REST API](https://developer.atlassian.com/cloud/trello/rest/)
